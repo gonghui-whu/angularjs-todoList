@@ -7,4 +7,4 @@ fontAwesome v4.7.0
 
 打开index.html即可看到效果
 
-<img src="eg.png" title="效果图" alt="效果图">
+![Image text](https://github.com/gonghui-whu/myImage/blob/master/angularjs-todoList.png)
