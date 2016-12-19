@@ -5,29 +5,27 @@
         <title>angularJs todoList</title>
         <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
         <script src="js/angular.min.js"></script>
         <script src="js/main.js"></script>
-
-        <style>
-            .text1{
-                text-decoration:line-through;
-                color:red;
-            }
-        </style>
     </head>
+
     <body ng-controller="todoList">
         <h2 align="center">angularJs todoList</h2>
-        <div class="col-sm-8 col-sm-offset-4" style="font-size:22px;padding:0;">
-            <div class="col-sm-7" style="padding:0;">
-                <input type="text" class="form-control" ng-model="inputText" ng-keydown="pressEnter($event)" style="border-top-right-radius:0;border-bottom-right-radius:0;" placeholder="请输入待办事项...">
+
+        <!-- 待办输入框 -->
+        <div class="col-sm-8 col-sm-offset-4 padding-0">
+            <div class="col-sm-7 padding-0">
+                <input type="text" class="form-control input-border" ng-model="inputText" ng-keydown="pressEnter($event)" placeholder="请输入待办事项...">
             </div>
-            <div class="col-sm-1" style="padding-left:0;">
-                <button class="btn" ng-click="addEvent()" style="border-top-left-radius:0;border-bottom-left-radius:0;">
+            <div class="col-sm-1 padding-0">
+                <button class="btn btn-border" ng-click="addEvent()">
                     <i class="fa fa-pencil"></i>
                 </button>
             </div>
         </div>
-        <div ng-if="content.length!=0" class="col-sm-5 col-sm-offset-4" style="padding:0;">
+
+        <div ng-if="content.length!=0" class="col-sm-5 col-sm-offset-4 padding-0">
             <table class="table">
                 <thead>
                     <tr>
@@ -47,8 +45,8 @@
                             </a>
                         </td>
                         <td>
-                            <div class="checkbox" style="margin:0;">
-                                <label ng-class="{true:'text1',false:' '}[content.done]">
+                            <div class="checkbox margin-0">
+                                <label ng-class="{true:'content',false:' '}[content.done]">
                                     <input type="checkbox" ng-model="content.done" ng-change="getLen()">{{content.text}}
                                 </label>
                             </div>
@@ -62,8 +60,9 @@
                 </tbody>
             </table>
         </div>
-        <div ng-if="content.length!=0" class="col-sm-5 col-sm-offset-4" style="padding:0;">
-            <button class="btn btn-danger" ng-click="">
+
+        <div ng-if="content.length!=0" class="col-sm-5 col-sm-offset-4 padding-0">
+            <button class="btn btn-danger">
                 <i class="fa fa-hourglass-half"></i> 还剩{{contentLen}}个
             </button>
             <button class="btn pull-right" ng-click="delDone()">
